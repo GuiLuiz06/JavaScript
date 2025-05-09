@@ -108,3 +108,22 @@ const nomes = ["pedro", "lucas", "mateus", "guilherme"]
 for (let i = 0; i < nomes.length; i++) {
     console.log(`Listando os usuários: ${nomes[i]}`)
 }
+
+// 11 - push e pop 
+const array = ["a", "b", "c", "d"]
+
+array.push("e")
+console.log(array)
+
+console.log(array.length)
+array.pop("e")
+console.log(array)
+
+const itemremovido = array.pop()
+
+console.log(itemremovido)
+
+console.log(array)
+array.push("d", "e", "f")
+
+console.log(array)
