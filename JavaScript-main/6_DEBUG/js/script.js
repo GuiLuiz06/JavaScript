@@ -44,3 +44,35 @@ console.log("executou o looping")
 if (c > 5) {
     c = 23
 }
+
+// 4 - tratamento do dados
+function checarNumero(n) {
+      const result = Number(n)
+
+      if (Number.isNaN(result)){
+        console.log("Valor Incorreto!")
+        return
+      }
+      console.log("Valor Correto!")
+      return result   
+}
+
+checarNumero(5)
+checarNumero("22")
+checarNumero(2)
+checarNumero("recebido")
+
+// 5 - exceptions - Ajudar programadores alertando um possivel erro
+let p = 30
+
+if (p != 18) {
+    // throw new Error ("O valor desse produto não pode ser diferente de 18")
+}
+
+// 6 - try catch
+
+try {
+    const soma = x + z
+} catch(error) {
+    console.log(`erro no programa: ${error}`)
+}
