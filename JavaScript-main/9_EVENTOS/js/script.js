@@ -61,8 +61,71 @@ document.addEventListener("keyup", (e) => {
 })
 
 // 7 - eventos de mouse
-const eventMouse = document.addEventListener("#mouse")
+const eventMouse = document.querySelector("#mouse")
 
 eventMouse.addEventListener("mousedown", () => {
-    console.log(`segurou o botão do mouse`)
+    console.log("pressionou o botão")
 })
+
+eventMouse.addEventListener("mouseup", () => {
+    console.log("soltou o botão")
+})
+
+eventMouse.addEventListener("dblclick", () => {
+    console.log("clique duplo")
+})
+
+//  8 - movimento do mouse 
+// document.addEventListener("mousemove", (e) => {
+//     console.log(`o eixo x é ${e.x}`)
+//     console.log(`o eixo y é ${e.y}`)
+// })
+
+// 9 - eventos por scroll
+window.addEventListener("scroll", (e) => {
+    if (window.pageYOffset > 100) {
+        console.log("passamos de 100px NO Y")
+    }
+})
+window.addEventListener("scroll", (e) => {
+    if (window.pageXOffset > 100) {
+        console.log("passamos de 100px NO X")
+    }
+})
+
+// 10 - eventos de focus/blur
+const input = document.querySelector("#input")
+
+input.addEventListener("focus", (e) => {
+    console.log("entrou no input")
+})
+input.addEventListener("blur", (e) => {
+    console.log("saiu do input")
+})
+
+// 11 - evento de carregamento
+window.addEventListener("load", (e) => {
+    console.log("A página carregou")
+})
+window.addEventListener("beforeunload", (e) => {
+    e.preventDefault()
+    e.returnValue = ""
+})
+
+// 12 - debounce 
+const debounce = (f, delay) => {
+    let timeout
+
+    return(...arguments) => {
+        if(timeout) {
+            clearTimeout(timeout)
+        }
+        timeout = setTimeout(() => {
+            f.apply(arguments)
+        }, delay)
+    }
+}
+
+window.addEventListener("mousemove", debounce(() => {
+    console.log("executando a cada 400ms")
+}, 400))
