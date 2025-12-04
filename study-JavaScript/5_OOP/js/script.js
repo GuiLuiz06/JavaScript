@@ -187,3 +187,18 @@ const jorge = new Humanocriar("Jorge", 44)
 
 console.log(jorge)
 console.log(Object.getPrototypeOf(jorge))
+
+// 8 - mais sobre classes
+class Caminhao {
+    constructor(eixos, rodas) {
+        this.eixos = eixos
+        this.rodas = rodas
+    }
+    infoCaminhao() {
+        console.log(`Este caminhao tem ${this.eixos} eixos e ${this.rodas} rodas`)
+    }
+}
+
+const volks = new Caminhao(6, 9)
+
+volks.infoCaminhao()
